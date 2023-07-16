@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="ns" default="/" />
+    <arg name="rate" default="100" />
+
+    <group ns="$(arg ns)">
+        <node name="publish_heartbeat" type="publish_heartbeat" pkg="test_ros_comm" output="screen" >
+            <param name="rate" value="$(arg rate)" />
+        </node>
+        <node name="respond_to_heartbeats" type="respond_to_heartbeats" pkg="test_ros_comm" output="screen" />
+    </group>
+</launch>
