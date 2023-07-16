@@ -7,7 +7,7 @@ rosrun test_ros_comm publish_heartbeat __ns:=gcs
 ```
 - terminal 2
 ```bash
-rosrun test_ros_comm respond_to_hearbeats __ns:=gcs
+rosrun test_ros_comm respond_to_heartbeats __ns:=gcs
 ```
 
 ## Namespace options
