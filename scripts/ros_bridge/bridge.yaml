@@ -1,0 +1,130 @@
+# https://docs.ros.org/en/galactic/Concepts/About-Quality-of-Service-Settings.html
+topics:
+  -
+    topic: /usb_cam/image_raw/compressed
+    type: sensor_msgs/msg/CompressedImage # ros2 style
+    queue_size: 1
+    qos:
+      history: keep_last
+      depth: 10
+      reliability: best_effort
+      durability: volatile
+  -
+    topic: /test_int
+    type: std_msgs/msg/Int64
+    queue_size: 1
+    qos:
+      history: keep_last
+      depth: 10
+      reliability: best_effort
+      durability: volatile
+  -
+    topic: /gcs/rx/gcs
+    type: std_msgs/msg/Float64MultiArray
+    queue_size: 1
+    qos:
+      history: keep_last
+      depth: 10
+      reliability: best_effort
+      durability: volatile
+  -
+    topic: /gcs/rx/uav
+    type: std_msgs/msg/Float64MultiArray
+    queue_size: 1
+    qos:
+      history: keep_last
+      depth: 10
+      reliability: best_effort
+      durability: volatile
+  -
+    topic: /gcs/rx/usv
+    type: std_msgs/msg/Float64MultiArray
+    queue_size: 1
+    qos:
+      history: keep_last
+      depth: 10
+      reliability: best_effort
+      durability: volatile
+  -
+    topic: /gcs/tx
+    type: std_msgs/msg/Float64MultiArray
+    queue_size: 1
+    qos:
+      history: keep_last
+      depth: 10
+      reliability: best_effort
+      durability: volatile
+
+  -
+    topic: /usv/rx/gcs
+    type: std_msgs/msg/Float64MultiArray
+    queue_size: 1
+    qos:
+      history: keep_last
+      depth: 10
+      reliability: best_effort
+      durability: volatile
+  -
+    topic: /usv/rx/uav
+    type: std_msgs/msg/Float64MultiArray
+    queue_size: 1
+    qos:
+      history: keep_last
+      depth: 10
+      reliability: best_effort
+      durability: volatile
+  -
+    topic: /usv/rx/usv
+    type: std_msgs/msg/Float64MultiArray
+    queue_size: 1
+    qos:
+      history: keep_last
+      depth: 10
+      reliability: best_effort
+      durability: volatile
+  -
+    topic: /usv/tx
+    type: std_msgs/msg/Float64MultiArray
+    queue_size: 1
+    qos:
+      history: keep_last
+      depth: 10
+      reliability: best_effort
+      durability: volatile
+
+  -
+    topic: /uav/rx/gcs
+    type: std_msgs/msg/Float64MultiArray
+    queue_size: 1
+    qos:
+      history: keep_last
+      depth: 10
+      reliability: best_effort
+      durability: volatile
+  -
+    topic: /uav/rx/uav
+    type: std_msgs/msg/Float64MultiArray
+    queue_size: 1
+    qos:
+      history: keep_last
+      depth: 10
+      reliability: best_effort
+      durability: volatile
+  -
+    topic: /uav/rx/usv
+    type: std_msgs/msg/Float64MultiArray
+    queue_size: 1
+    qos:
+      history: keep_last
+      depth: 10
+      reliability: best_effort
+      durability: volatile
+  -
+    topic: /uav/tx
+    type: std_msgs/msg/Float64MultiArray
+    queue_size: 1
+    qos:
+      history: keep_last
+      depth: 10
+      reliability: best_effort
+      durability: volatile

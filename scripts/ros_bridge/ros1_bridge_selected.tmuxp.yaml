@@ -1,0 +1,27 @@
+# Usage
+# $ tmuxp load ros1_bridge_all.yaml # start
+# $ tmux kill-session -t ros1_bridge # end
+
+session_name: ros1_bridge
+
+environment:
+  ROS1_INSTALL_PATH: /opt/ros/noetic
+  ROS2_INSTALL_PATH: /opt/ros/galactic
+  ROS_DOMAIN_ID: "100"
+  DELAY: "1"
+
+options:
+  default-command: /bin/bash
+
+windows:
+- window_name: lamp
+  focus: true
+  layout: tiled
+  shell_command_before:
+    - export DATE=$(date "+%Y-%m-%d_%H-%M-%S"); echo "DATE=$DATE"
+    # - source ~/catkin_ws/devel/setup.bash
+
+  panes:
+    - source ${ROS1_INSTALL_PATH}/setup.bash; roscore
+    - sleep $DELAY; source ${ROS1_INSTALL_PATH}/setup.bash; rosparam load bridge.yaml; source ${ROS2_INSTALL_PATH}/setup.bash; ros2 run ros1_bridge parameter_bridge
+    # - sleep $DELAY; roscd kaist_rosbag/bags; mkdir ${SET_NUM}_${DATE}; roslaunch kaist_rosbag kaist_rosbag.launch record_folder:=${SET_NUM}_${DATE}
